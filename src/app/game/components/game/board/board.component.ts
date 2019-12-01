@@ -7,12 +7,13 @@ import { Cell } from '../../../../core/models/cell.model';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  cells: Cell[][];
   @Output() gameEnded = new EventEmitter<Cell>();
   @Output() playerEmitter = new EventEmitter<boolean>();
+  @Input() gameMode: string;
 
   playerTurn: boolean;
   clickSound = new Audio();
+  cells: Cell[][];
 
   constructor() {
     this.cells = [];
@@ -29,14 +30,28 @@ export class BoardComponent implements OnInit {
   }
 
   onSelectCell(cell) {
-    this.clickSound.load();
-    this.clickSound.play();
+    console.log(cell);
     const content = this.playerTurn ? 'plus' : 'minus';
     this.playerTurn = !this.playerTurn;
     this.playerEmitter.emit(this.playerTurn);
     this.fillColumn(cell, content);
     this.checkEndGame();
+    console.log(this.playerTurn);
+    if (this.gameMode === 'Player vs AI' && !this.playerTurn) {
+      this.automaticMove();
+      this.clickSound.load();
+      this.clickSound.play();
+    }
 
+  }
+
+  automaticMove() {
+    // Random number 1 to 6
+    const col = Math.floor(Math.random() * 7);
+    // Random number 1 to 5
+    const row = Math.floor(Math.random() * 6);
+    const cell = new Cell(row, col, null, false);
+    this.onSelectCell(cell);
   }
 
   checkEndGame() {

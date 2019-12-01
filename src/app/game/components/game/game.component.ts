@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
-import { Cell } from "../../../core/models/cell.model";
 
 @Component({
   selector: 'app-game',
@@ -10,16 +9,20 @@ export class GameComponent implements OnInit, AfterViewInit {
   winnerSound = new Audio();
   gameSound = new Audio();
   playerTurnOriginal: boolean;
+  gameMode: string;
 
   ngOnInit() {
 
     this.gameSound.load();
     this.gameSound.play();
   }
-
+  onChangeGameMode(gameMode) {
+    this.gameMode = gameMode;
+  }
   constructor(
     private elementRef: ElementRef
   ) {
+    this.gameMode = null;
     this.playerTurnOriginal = true;
     this.gameSound.src = 'assets/sound/retro.mp3';
     this.winnerSound.src = 'assets/sound/cheer.mp3';
