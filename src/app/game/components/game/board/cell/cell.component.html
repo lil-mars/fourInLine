@@ -1,0 +1,13 @@
+<button *ngIf="!cell.filled" class="btn btn-danger bg-transparent cell" (click)="clickedCell(cell)">
+
+</button>
+
+<!--cell.filled && cell.content === 'minus' else notFilledCell-->
+<!--<i class="fa fa-minus-square"></i>-->
+<button *ngIf="cell.filled && cell.content === 'plus'" class="btn btn-warning bg-yellow cell"  (click)="clickedCell(cell)">
+
+</button>
+<button *ngIf="cell.filled && cell.content === 'minus'" class="btn btn-secondary bg-bluesky cell" (click)="clickedCell(cell)">
+
+</button>
+

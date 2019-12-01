@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.bg{
+
+  background: url('https://media.gettyimages.com/videos/video-game-retro-background-video-id1007947212?s=640x640') no-repeat center;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+
+}

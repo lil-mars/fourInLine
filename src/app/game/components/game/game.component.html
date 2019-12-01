@@ -1,0 +1,9 @@
+<div class="">
+  <h1 class="display-3 text-white" align="center">4 EN LINEA</h1>
+  <div class="container">
+    <app-board (playerEmitter)="playerTurnOriginal = $event" (gameEnded)="onGameEnd($event)" ></app-board>
+  </div>
+  <h1 [class.text-warning]="playerTurnOriginal"
+      [class.text-primary]="!playerTurnOriginal"
+      align="center">{{ getPlayerPlaying()}}</h1>
+</div>

@@ -1,0 +1,18 @@
+.item {
+  border: 3px solid red;
+  display: table-cell;
+}
+.btn-white{
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+.cell {
+  width: 100%;
+  height: 116px
+}
+.bg-bluesky {
+  background-color:#2B9095 ;
+}
+.bg-yellow {
+  background-color:#CCA627 ;
+}

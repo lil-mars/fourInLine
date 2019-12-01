@@ -1,0 +1,9 @@
+
+<table class="" style="border: 3px solid black ; width: 100%; min-height: 700px">
+  <tr *ngFor="let row of cells">
+    <td align="center"  *ngFor="let cell of row">
+      <app-cell [cell]="cell" (selectedCell)="onSelectCell($event)"></app-cell>
+    </td>
+  </tr>
+</table>
+
