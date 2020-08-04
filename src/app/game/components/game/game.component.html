@@ -1,19 +1,35 @@
 <div class="">
-  <h1 class="display-4 text-white" align="center">4 EN LINEA</h1>
+  <h1 class="display-4 text-white" align="center">4 EN LINEA BY:
+    <a target="_blank" href="https://github.com/x-lil-peep-x" style="color: greenyellow">ET</a>
+  </h1>
   <div class="container">
 
+    <div class="row">
+      <div class="col-2 offset-5" (click)="playSound()">
+        <button class="btn btn-outline-warning">
+          Musica
+          <i class="fa fa-music"></i>
+        </button>
+      </div>
+    </div>
     <div *ngIf="gameMode === null">
       <br><br><br><br><br><br>
       <h1 class="display-4 text-danger">Selecciona el modo de Juego:</h1>
+      <br>
       <div class="row">
-        <button (click)="onChangeGameMode('Player vs player')" type="button"
-                class="text-center btn btn-outline-danger  btn-lg btn-block col-12">
+        <div class="col-6 offset-3 ">
+          <button (click)="onChangeGameMode('Player vs player')" type="button"
+                class="text-center btn btn-outline-danger  btn-lg btn-block">
           Jugador VS Jugador
         </button>
+          <br>
+        </div>
+        <div class="col-6 offset-3 ">
         <button (click)="onChangeGameMode('Player vs AI')" type="button"
-                class="text-center btn btn-outline-danger  btn-lg btn-block col-12">
+                class="text-center btn btn-outline-danger  btn-lg btn-block">
           Jugador VS Maquina
         </button>
+        </div>
       </div>
     </div>
 

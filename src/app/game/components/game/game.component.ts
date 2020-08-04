@@ -15,8 +15,6 @@ export class GameComponent implements OnInit, AfterViewInit {
 
     ngOnInit() {
 
-        this.gameSound.load();
-        this.gameSound.play();
     }
 
     onChangeGameMode(gameMode) {
@@ -76,4 +74,8 @@ export class GameComponent implements OnInit, AfterViewInit {
         });
     }
 
+    playSound() {
+        this.gameSound.load();
+        this.gameSound.play();
+    }
 }
